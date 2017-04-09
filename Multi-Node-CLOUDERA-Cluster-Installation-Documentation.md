@@ -40,9 +40,11 @@ Run the following command in your master node (First Instance i.e node1):
 cat .ssh/id_rsa.pub/ssh yournodename ‘cat >> ~/.ssh/authorized_keys’
 ```
 `For My node Example`
+
 ``` vi 
 (cat .ssh/id_rsa.pub/ssh node2 ‘cat>>~/.ssh/authorized_keys’)
-(cat .ssh/id_rsa.pub/ssh node3 ‘cat>>~/.ssh/authorized_keys’)```
+(cat .ssh/id_rsa.pub/ssh node3 ‘cat>>~/.ssh/authorized_keys’)
+```
 
 
 The above commands place node1 public keys in node2 and node .
@@ -51,9 +53,12 @@ The above commands place node1 public keys in node2 and node .
 ### STEP 7 :
 If you get error like “Permission Denied” or “Failure”  in STEP 6 
 You need to change the Permission as Google Cloud doesn’t allow to grant access from root. 
-``` vi 
-Go to : vi /etc/ssh/sshd_config
-```  and make following changes :
+
+Go to : 
+``` vi
+vi /etc/ssh/sshd_config
+```  
+and make following changes :
 Change `PasswordAuthentication` to Yes and `PermitRootLogin` to Yes 
 (Screenshot 16 and Screenshot 16(a)).
 
@@ -140,8 +145,10 @@ CLOUDERA INSTALLATION FURTHER STEPS
 
 
 Download the installer by (from Master Node):
+
 ``` vi
 wget https://archive.cloudera.com/cm5/installer/latest/cloudera-manager-installer.bin 
+
 ```
 
 Now run the following command : 
